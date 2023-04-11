@@ -14,6 +14,13 @@ after_success:
     - docker build -t pushpit07/multi-nginx ./nginx
     - docker build -t pushpit07/multi-server ./server
     - docker build -t pushpit07/multi-worker ./worker
+    # Log in to the docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # Take those images and push them to docker hub
+    - docker push pushpit07/multi-client
+    - docker push pushpit07/multi-nginx
+    - docker push pushpit07/multi-server
+    - docker push pushpit07/multi-worker
 # deploy:
 #     provider: elasticbeanstalk
 #     region: "us-west-2"
