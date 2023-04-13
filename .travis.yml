@@ -24,12 +24,12 @@ after_success:
     - docker push pushpit07/multi-worker
 # deploy:
 #     provider: elasticbeanstalk
-#     region: "us-west-2"
-#     app: "docker-react"
-#     env: "Docker-env"
+#     region: "us-west-1"
+#     app: "multi-docker"
+#     env: "MultiDocker-env"
 #     bucket_name: "elasticbeanstalk-us-west-2-306723636626"
-#     bucket_path: "docker-react"
+#     bucket_path: "docker-multi"
 #     on:
 #         branch: main
 #     access_key_id: $AWS_ACCESS_KEY
-#     secret_access_key: "$AWS_SECRET_KEY"
+#     secret_access_key: $AWS_SECRET_KEY
